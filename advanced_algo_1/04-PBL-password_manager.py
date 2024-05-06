@@ -1,10 +1,16 @@
 import streamlit as st
 
 def main():
+    st.title('Password Manager :closed_lock_with_key:')
     # Create a form to collect user input
     full_name = st.text_input("Full Name")
     email = st.text_input("Email")
-    password = st.text_input("Password", type="password")
+    # add a dropdown menu to create or reset password
+    action = st.selectbox("Action", ["Create", "Reset"])
+    if action == "Reset":
+        pass
+    if action == "Create":
+        password = st.text_input("Password", type="password")
 
     # Create a button to submit the form
     if st.button("Submit"):
